@@ -4,214 +4,284 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Emma Bisutería | Joyería artesanal en San Luis Potosí</title>
-  <meta name="description" content="Emma Bisutería: piezas artesanales elegantes hechas en San Luis Potosí, SLP, México. Collares, pulseras y aretes personalizados." />
+  <meta name="description" content="Emma Bisutería: joyería artesanal elegante hecha en San Luis Potosí, SLP, México. Collares, pulseras y aretes personalizados." />
+
   <style>
     :root {
-      --gold: #b88942;
-      --dark: #2f241d;
-      --cream: #f8f1e6;
-      --soft: #fffaf3;
-      --muted: #7b6a5e;
+      --ivory: #f3ead8;
+      --ivory-light: #fff8eb;
+      --paper: #efe2c9;
+      --gold: #a77935;
+      --gold-light: #d8b76f;
+      --brown: #6f4d24;
+      --ink: #3a2a18;
+      --muted: #8a744f;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--dark);
-      background: linear-gradient(180deg, var(--soft), var(--cream));
+      min-height: 100vh;
+      font-family: "Times New Roman", Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,.55), transparent 28%),
+        radial-gradient(circle at 70% 80%, rgba(167,121,53,.14), transparent 30%),
+        linear-gradient(135deg, var(--ivory-light), var(--paper));
     }
 
-    .page {
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .28;
+      background-image:
+        linear-gradient(90deg, rgba(111,77,36,.05) 1px, transparent 1px),
+        linear-gradient(rgba(111,77,36,.04) 1px, transparent 1px);
+      background-size: 38px 38px;
+      mix-blend-mode: multiply;
+    }
+
+    .wrap {
       min-height: 100vh;
       display: grid;
       place-items: center;
-      padding: 32px 18px;
+      padding: 28px 16px;
     }
 
     .card {
-      width: 100%;
-      max-width: 980px;
-      background: rgba(255, 250, 243, 0.92);
-      border: 1px solid rgba(184, 137, 66, 0.25);
-      border-radius: 28px;
-      box-shadow: 0 24px 70px rgba(47, 36, 29, 0.12);
+      width: min(1080px, 100%);
+      padding: clamp(28px, 6vw, 72px);
+      border: 1px solid rgba(167,121,53,.32);
+      background: rgba(255,248,235,.66);
+      box-shadow: 0 30px 90px rgba(68,45,18,.14);
+      position: relative;
       overflow: hidden;
     }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      align-items: center;
-      padding: 56px;
+    .card::before,
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border: 1px solid rgba(167,121,53,.16);
+      border-radius: 50%;
+    }
+
+    .card::before {
+      top: -90px;
+      left: -90px;
+    }
+
+    .card::after {
+      bottom: -90px;
+      right: -90px;
+    }
+
+    header {
+      text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     .logo {
-      width: 100%;
-      max-width: 420px;
+      width: min(520px, 88%);
       display: block;
-      margin: 0 auto 24px;
-      border-radius: 18px;
+      margin: 0 auto 26px;
+      filter: drop-shadow(0 10px 18px rgba(111,77,36,.12));
     }
 
-    .eyebrow {
+    .kicker {
       color: var(--gold);
-      letter-spacing: 0.18em;
       text-transform: uppercase;
+      letter-spacing: .28em;
       font-size: 13px;
-      margin-bottom: 14px;
+      margin: 0 0 22px;
     }
 
-    h1 {
-      font-size: clamp(38px, 6vw, 72px);
-      line-height: 0.95;
-      margin: 0 0 20px;
+    .headline {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: clamp(30px, 5vw, 58px);
+      line-height: 1.05;
       font-weight: 400;
+      color: var(--brown);
     }
 
     .intro {
+      max-width: 690px;
+      margin: 24px auto 34px;
       font-size: 19px;
-      line-height: 1.65;
+      line-height: 1.7;
       color: var(--muted);
-      margin-bottom: 28px;
     }
 
     .cta {
       display: inline-block;
-      background: var(--gold);
-      color: white;
+      padding: 15px 30px;
+      border: 1px solid var(--gold);
+      color: var(--ivory-light);
+      background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--brown));
       text-decoration: none;
-      padding: 15px 24px;
       border-radius: 999px;
-      font-size: 16px;
-      letter-spacing: 0.03em;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 13px;
+      box-shadow: 0 14px 28px rgba(111,77,36,.2);
     }
 
     .cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(184, 137, 66, 0.28);
+      transform: translateY(-1px);
     }
 
-    .details {
-      background: white;
-      border-radius: 24px;
-      padding: 32px;
-      border: 1px solid rgba(184, 137, 66, 0.18);
-    }
-
-    .items {
+    .collection {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin: 26px 0;
+      gap: 18px;
+      max-width: 760px;
+      margin: 48px auto 34px;
     }
 
     .item {
       text-align: center;
-      padding: 20px 10px;
-      border-radius: 18px;
-      background: var(--soft);
-      border: 1px solid rgba(184, 137, 66, 0.18);
+      padding: 26px 16px;
+      background: rgba(255,255,255,.32);
+      border: 1px solid rgba(167,121,53,.26);
     }
 
     .icon {
-      font-size: 34px;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .item span:last-child {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .location {
-      font-size: 15px;
-      color: var(--muted);
-      margin-top: 22px;
-    }
-
-    .location a {
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 14px;
+      display: grid;
+      place-items: center;
       color: var(--gold);
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: var(--muted);
-      border-top: 1px solid rgba(184, 137, 66, 0.16);
+    .icon svg {
+      width: 48px;
+      height: 48px;
+      stroke: currentColor;
+      stroke-width: 1.3;
+      fill: none;
     }
 
-    @media (max-width: 760px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 34px 22px;
-        text-align: center;
-      }
+    .item h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--brown);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
 
-      .details {
-        padding: 24px 18px;
-      }
+    .contact {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-top: 28px;
+    }
 
-      .items {
-        grid-template-columns: 1fr;
-      }
+    .contact a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(167,121,53,.45);
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-top: 42px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(167,121,53,.22);
+      color: var(--muted);
+      font-size: 14px;
+      letter-spacing: .04em;
+    }
+
+    @media (max-width: 720px) {
+      .card { padding: 30px 20px; }
+      .collection { grid-template-columns: 1fr; }
+      .intro { font-size: 17px; }
+      .kicker { letter-spacing: .18em; }
     }
   </style>
 </head>
+
 <body>
-  <main class="page">
+  <main class="wrap">
     <section class="card">
-      <div class="hero">
-        <div>
-          <img class="logo" src="emmabisuteria.jpeg" alt="Logo de Emma Bisutería" />
-          <p class="eyebrow">Joyería artesanal de boutique</p>
-          <h1>Emma Bisutería</h1>
-          <p class="intro">
-            Piezas hechas a mano con un estilo elegante, femenino y atemporal.
-            Diseños cuidadosamente elaborados en San Luis Potosí para quienes buscan
-            accesorios únicos o una pieza personalizada.
-          </p>
-          <a class="cta" href="mailto:emma59@hotmail.com?subject=Consulta%20Emma%20Bisuter%C3%ADa">
-            Escribir a Emma
-          </a>
-        </div>
+      <header>
+        <img class="logo" src="emmabisuteria.jpeg" alt="Emma Bisutería" />
 
-        <div class="details">
-          <p class="eyebrow">Colección</p>
-          <p class="intro">
-            Consulta disponibilidad, solicita más información o pregunta por diseños
-            personalizados hechos especialmente para ti.
-          </p>
+        <p class="kicker">Joyería artesanal de boutique</p>
 
-          <div class="items">
-            <div class="item">
-              <span class="icon">◇</span>
-              <span>Collares</span>
-            </div>
-            <div class="item">
-              <span class="icon">○</span>
-              <span>Pulseras</span>
-            </div>
-            <div class="item">
-              <span class="icon">✦</span>
-              <span>Aretes</span>
-            </div>
+        <h1 class="headline">
+          Piezas femeninas, elegantes y hechas a mano en San Luis Potosí.
+        </h1>
+
+        <p class="intro">
+          Emma Bisutería crea accesorios con detalle artesanal y estilo atemporal.
+          Solicita información sobre piezas disponibles o encarga un diseño personalizado.
+        </p>
+
+        <a class="cta" href="mailto:emma59@hotmail.com?subject=Consulta%20Emma%20Bisuter%C3%ADa">
+          Escribir a Emma
+        </a>
+      </header>
+
+      <section class="collection" aria-label="Colección">
+        <article class="item">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64">
+              <path d="M15 20c3 18 31 18 34 0" />
+              <circle cx="32" cy="42" r="5" />
+              <path d="M27 46l-5 8M37 46l5 8" />
+            </svg>
           </div>
+          <h2>Collares</h2>
+        </article>
 
-          <p class="location">
-            San Luis Potosí, SLP, México<br />
-            Contacto: <a href="mailto:emma59@hotmail.com">emma59@hotmail.com</a>
-          </p>
-        </div>
-      </div>
+        <article class="item">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64">
+              <ellipse cx="32" cy="32" rx="20" ry="13" />
+              <circle cx="48" cy="32" r="4" />
+              <circle cx="16" cy="32" r="4" />
+            </svg>
+          </div>
+          <h2>Pulseras</h2>
+        </article>
+
+        <article class="item">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64">
+              <path d="M24 14c0 8-8 9-8 18a8 8 0 0 0 16 0c0-9-8-10-8-18z" />
+              <path d="M44 14c0 8-8 9-8 18a8 8 0 0 0 16 0c0-9-8-10-8-18z" />
+              <circle cx="24" cy="10" r="2" />
+              <circle cx="44" cy="10" r="2" />
+            </svg>
+          </div>
+          <h2>Aretes</h2>
+        </article>
+      </section>
+
+      <p class="contact">
+        San Luis Potosí, SLP, México<br />
+        Contacto: <a href="mailto:emma59@hotmail.com">emma59@hotmail.com</a>
+      </p>
 
       <footer>
-        © 2026 Emma Bisutería. Piezas artesanales hechas con detalle.
+        © 2026 Emma Bisutería · Piezas artesanales hechas con detalle
       </footer>
     </section>
   </main>
