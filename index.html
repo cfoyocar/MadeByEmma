@@ -6,16 +6,19 @@
   <title>Emma Bisutería | Joyería artesanal en San Luis Potosí</title>
   <meta name="description" content="Emma Bisutería: joyería artesanal elegante hecha en San Luis Potosí, SLP, México. Collares, pulseras y aretes personalizados." />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --ivory: #f3ead8;
-      --ivory-light: #fff8eb;
-      --paper: #efe2c9;
-      --gold: #a77935;
-      --gold-light: #d8b76f;
-      --brown: #6f4d24;
-      --ink: #3a2a18;
-      --muted: #8a744f;
+      --paper: #f3ead8;
+      --paper-light: #fff8ea;
+      --gold: #b7863d;
+      --gold-dark: #8b5f24;
+      --brown: #5d3f1d;
+      --soft-brown: #8f744d;
+      --line: rgba(183, 134, 61, 0.28);
     }
 
     * { box-sizing: border-box; }
@@ -23,12 +26,11 @@
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: "Times New Roman", Georgia, serif;
-      color: var(--ink);
+      color: var(--brown);
       background:
-        radial-gradient(circle at 30% 20%, rgba(255,255,255,.55), transparent 28%),
-        radial-gradient(circle at 70% 80%, rgba(167,121,53,.14), transparent 30%),
-        linear-gradient(135deg, var(--ivory-light), var(--paper));
+        radial-gradient(circle at 50% 0%, rgba(255,255,255,.65), transparent 36%),
+        linear-gradient(180deg, var(--paper-light), var(--paper));
+      font-family: "Cormorant Garamond", Georgia, serif;
     }
 
     body::before {
@@ -36,216 +38,226 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: .28;
+      opacity: .22;
       background-image:
-        linear-gradient(90deg, rgba(111,77,36,.05) 1px, transparent 1px),
-        linear-gradient(rgba(111,77,36,.04) 1px, transparent 1px);
-      background-size: 38px 38px;
-      mix-blend-mode: multiply;
+        linear-gradient(90deg, rgba(120, 83, 37, .06) 1px, transparent 1px),
+        linear-gradient(rgba(120, 83, 37, .045) 1px, transparent 1px);
+      background-size: 42px 42px;
     }
 
-    .wrap {
+    .page {
       min-height: 100vh;
       display: grid;
       place-items: center;
-      padding: 28px 16px;
+      padding: 32px 18px;
     }
 
-    .card {
-      width: min(1080px, 100%);
-      padding: clamp(28px, 6vw, 72px);
-      border: 1px solid rgba(167,121,53,.32);
-      background: rgba(255,248,235,.66);
-      box-shadow: 0 30px 90px rgba(68,45,18,.14);
+    .panel {
+      width: min(1120px, 100%);
+      min-height: 86vh;
       position: relative;
+      padding: clamp(34px, 7vw, 82px);
+      text-align: center;
+      border: 1px solid var(--line);
+      background: rgba(255, 248, 234, .72);
+      box-shadow: 0 28px 80px rgba(82, 55, 22, .10);
       overflow: hidden;
     }
 
-    .card::before,
-    .card::after {
+    .panel::before {
       content: "";
       position: absolute;
-      width: 220px;
-      height: 220px;
-      border: 1px solid rgba(167,121,53,.16);
+      width: 270px;
+      height: 270px;
+      left: -115px;
+      top: -115px;
+      border: 1px solid rgba(183, 134, 61, .22);
       border-radius: 50%;
     }
 
-    .card::before {
-      top: -90px;
-      left: -90px;
-    }
-
-    .card::after {
-      bottom: -90px;
-      right: -90px;
-    }
-
-    header {
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
     .logo {
-      width: min(520px, 88%);
       display: block;
-      margin: 0 auto 26px;
-      filter: drop-shadow(0 10px 18px rgba(111,77,36,.12));
+      width: min(560px, 92%);
+      margin: 0 auto 34px;
+      filter: drop-shadow(0 8px 16px rgba(93, 63, 29, .10));
+    }
+
+    .brand-script {
+      margin: 0;
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(64px, 10vw, 126px);
+      line-height: .85;
+      font-weight: 400;
+      color: var(--gold-dark);
+    }
+
+    .brand-sub {
+      margin: 12px 0 42px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(18px, 2.5vw, 32px);
+      font-weight: 300;
+      letter-spacing: .42em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
     }
 
     .kicker {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: .28em;
-      font-size: 13px;
       margin: 0 0 22px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: .34em;
+      text-transform: uppercase;
+      color: var(--gold);
     }
 
-    .headline {
+    h1 {
       max-width: 760px;
       margin: 0 auto;
-      font-size: clamp(30px, 5vw, 58px);
+      font-size: clamp(32px, 5.2vw, 64px);
       line-height: 1.05;
-      font-weight: 400;
+      font-weight: 500;
       color: var(--brown);
     }
 
     .intro {
-      max-width: 690px;
-      margin: 24px auto 34px;
-      font-size: 19px;
-      line-height: 1.7;
-      color: var(--muted);
+      max-width: 720px;
+      margin: 28px auto 34px;
+      font-size: 22px;
+      line-height: 1.65;
+      color: var(--soft-brown);
     }
 
     .cta {
       display: inline-block;
-      padding: 15px 30px;
-      border: 1px solid var(--gold);
-      color: var(--ivory-light);
-      background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--brown));
-      text-decoration: none;
+      padding: 14px 34px;
       border-radius: 999px;
-      letter-spacing: .08em;
+      border: 1px solid rgba(139, 95, 36, .45);
+      background: linear-gradient(135deg, #d7b76f, #a8752e 62%, #80551f);
+      color: #fff8ea;
+      text-decoration: none;
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      letter-spacing: .16em;
       text-transform: uppercase;
-      font-size: 13px;
-      box-shadow: 0 14px 28px rgba(111,77,36,.2);
-    }
-
-    .cta:hover {
-      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(93, 63, 29, .18);
     }
 
     .collection {
-      position: relative;
-      z-index: 1;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
       max-width: 760px;
-      margin: 48px auto 34px;
+      margin: 56px auto 36px;
     }
 
     .item {
-      text-align: center;
-      padding: 26px 16px;
-      background: rgba(255,255,255,.32);
-      border: 1px solid rgba(167,121,53,.26);
+      padding: 30px 16px 28px;
+      border: 1px solid var(--line);
+      background: rgba(255, 252, 244, .38);
     }
 
     .icon {
-      width: 54px;
-      height: 54px;
-      margin: 0 auto 14px;
-      display: grid;
-      place-items: center;
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 18px;
       color: var(--gold);
     }
 
-    .icon svg {
-      width: 48px;
-      height: 48px;
+    svg {
+      width: 100%;
+      height: 100%;
       stroke: currentColor;
-      stroke-width: 1.3;
+      stroke-width: 1.15;
       fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .item h2 {
       margin: 0;
-      font-size: 18px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
       font-weight: 400;
-      color: var(--brown);
-      letter-spacing: .08em;
+      letter-spacing: .24em;
       text-transform: uppercase;
+      color: var(--brown);
     }
 
     .contact {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      color: var(--muted);
-      font-size: 16px;
+      margin: 0;
+      font-size: 18px;
       line-height: 1.7;
-      margin-top: 28px;
+      color: var(--soft-brown);
     }
 
     .contact a {
-      color: var(--gold);
+      color: var(--gold-dark);
       text-decoration: none;
-      border-bottom: 1px solid rgba(167,121,53,.45);
+      border-bottom: 1px solid rgba(139, 95, 36, .35);
     }
 
     footer {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      margin-top: 42px;
+      margin-top: 36px;
       padding-top: 22px;
-      border-top: 1px solid rgba(167,121,53,.22);
-      color: var(--muted);
-      font-size: 14px;
-      letter-spacing: .04em;
+      border-top: 1px solid var(--line);
+      font-family: "Montserrat", sans-serif;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--soft-brown);
     }
 
-    @media (max-width: 720px) {
-      .card { padding: 30px 20px; }
-      .collection { grid-template-columns: 1fr; }
-      .intro { font-size: 17px; }
-      .kicker { letter-spacing: .18em; }
+    @media (max-width: 760px) {
+      .panel {
+        padding: 30px 20px;
+      }
+
+      .logo {
+        width: min(430px, 96%);
+      }
+
+      .collection {
+        grid-template-columns: 1fr;
+        margin-top: 42px;
+      }
+
+      .intro {
+        font-size: 19px;
+      }
+
+      .brand-sub {
+        letter-spacing: .28em;
+      }
     }
   </style>
 </head>
 
 <body>
-  <main class="wrap">
-    <section class="card">
-      <header>
-        <img class="logo" src="emmabisuteria.jpeg" alt="Emma Bisutería" />
+  <main class="page">
+    <section class="panel">
+      <img class="logo" src="emmabisuteria.jpeg" alt="Emma Bisutería" />
 
-        <p class="kicker">Joyería artesanal de boutique</p>
+      <p class="kicker">Joyería artesanal de boutique</p>
 
-        <h1 class="headline">
-          Piezas femeninas, elegantes y hechas a mano en San Luis Potosí.
-        </h1>
+      <h1>Piezas elegantes, femeninas y hechas a mano en San Luis Potosí.</h1>
 
-        <p class="intro">
-          Emma Bisutería crea accesorios con detalle artesanal y estilo atemporal.
-          Solicita información sobre piezas disponibles o encarga un diseño personalizado.
-        </p>
+      <p class="intro">
+        Accesorios artesanales con detalle, carácter y estilo atemporal.
+        Solicita información sobre piezas disponibles o encarga un diseño personalizado.
+      </p>
 
-        <a class="cta" href="mailto:emma59@hotmail.com?subject=Consulta%20Emma%20Bisuter%C3%ADa">
-          Escribir a Emma
-        </a>
-      </header>
+      <a class="cta" href="mailto:emma59@hotmail.com?subject=Consulta%20Emma%20Bisuter%C3%ADa">
+        Escribir a Emma
+      </a>
 
       <section class="collection" aria-label="Colección">
         <article class="item">
           <div class="icon" aria-hidden="true">
             <svg viewBox="0 0 64 64">
-              <path d="M15 20c3 18 31 18 34 0" />
-              <circle cx="32" cy="42" r="5" />
-              <path d="M27 46l-5 8M37 46l5 8" />
+              <path d="M16 20c2.5 17 29.5 17 32 0" />
+              <circle cx="32" cy="43" r="4.5" />
+              <path d="M29 47l-5 7M35 47l5 7" />
             </svg>
           </div>
           <h2>Collares</h2>
@@ -254,9 +266,9 @@
         <article class="item">
           <div class="icon" aria-hidden="true">
             <svg viewBox="0 0 64 64">
-              <ellipse cx="32" cy="32" rx="20" ry="13" />
-              <circle cx="48" cy="32" r="4" />
-              <circle cx="16" cy="32" r="4" />
+              <ellipse cx="32" cy="32" rx="21" ry="12" />
+              <circle cx="16" cy="32" r="3.5" />
+              <circle cx="48" cy="32" r="3.5" />
             </svg>
           </div>
           <h2>Pulseras</h2>
@@ -265,10 +277,10 @@
         <article class="item">
           <div class="icon" aria-hidden="true">
             <svg viewBox="0 0 64 64">
-              <path d="M24 14c0 8-8 9-8 18a8 8 0 0 0 16 0c0-9-8-10-8-18z" />
-              <path d="M44 14c0 8-8 9-8 18a8 8 0 0 0 16 0c0-9-8-10-8-18z" />
-              <circle cx="24" cy="10" r="2" />
-              <circle cx="44" cy="10" r="2" />
+              <circle cx="24" cy="13" r="2" />
+              <circle cx="40" cy="13" r="2" />
+              <path d="M24 18c-4 7-8 11-8 18a8 8 0 0 0 16 0c0-7-4-11-8-18z" />
+              <path d="M40 18c-4 7-8 11-8 18a8 8 0 0 0 16 0c0-7-4-11-8-18z" />
             </svg>
           </div>
           <h2>Aretes</h2>
