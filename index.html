@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emma Bisutería | Joyería artesanal en San Luis Potosí</title>
+  <meta name="description" content="Emma Bisutería: piezas artesanales elegantes hechas en San Luis Potosí, SLP, México. Collares, pulseras y aretes personalizados." />
+  <style>
+    :root {
+      --gold: #b88942;
+      --dark: #2f241d;
+      --cream: #f8f1e6;
+      --soft: #fffaf3;
+      --muted: #7b6a5e;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--dark);
+      background: linear-gradient(180deg, var(--soft), var(--cream));
+    }
+
+    .page {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px 18px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 980px;
+      background: rgba(255, 250, 243, 0.92);
+      border: 1px solid rgba(184, 137, 66, 0.25);
+      border-radius: 28px;
+      box-shadow: 0 24px 70px rgba(47, 36, 29, 0.12);
+      overflow: hidden;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+      padding: 56px;
+    }
+
+    .logo {
+      width: 100%;
+      max-width: 420px;
+      display: block;
+      margin: 0 auto 24px;
+      border-radius: 18px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 0.95;
+      margin: 0 0 20px;
+      font-weight: 400;
+    }
+
+    .intro {
+      font-size: 19px;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      text-decoration: none;
+      padding: 15px 24px;
+      border-radius: 999px;
+      font-size: 16px;
+      letter-spacing: 0.03em;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(184, 137, 66, 0.28);
+    }
+
+    .details {
+      background: white;
+      border-radius: 24px;
+      padding: 32px;
+      border: 1px solid rgba(184, 137, 66, 0.18);
+    }
+
+    .items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 26px 0;
+    }
+
+    .item {
+      text-align: center;
+      padding: 20px 10px;
+      border-radius: 18px;
+      background: var(--soft);
+      border: 1px solid rgba(184, 137, 66, 0.18);
+    }
+
+    .icon {
+      font-size: 34px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .item span:last-child {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .location {
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 22px;
+    }
+
+    .location a {
+      color: var(--gold);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: var(--muted);
+      border-top: 1px solid rgba(184, 137, 66, 0.16);
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 34px 22px;
+        text-align: center;
+      }
+
+      .details {
+        padding: 24px 18px;
+      }
+
+      .items {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <div class="hero">
+        <div>
+          <img class="logo" src="emmabisuteria.jpeg" alt="Logo de Emma Bisutería" />
+          <p class="eyebrow">Joyería artesanal de boutique</p>
+          <h1>Emma Bisutería</h1>
+          <p class="intro">
+            Piezas hechas a mano con un estilo elegante, femenino y atemporal.
+            Diseños cuidadosamente elaborados en San Luis Potosí para quienes buscan
+            accesorios únicos o una pieza personalizada.
+          </p>
+          <a class="cta" href="mailto:emma59@hotmail.com?subject=Consulta%20Emma%20Bisuter%C3%ADa">
+            Escribir a Emma
+          </a>
+        </div>
+
+        <div class="details">
+          <p class="eyebrow">Colección</p>
+          <p class="intro">
+            Consulta disponibilidad, solicita más información o pregunta por diseños
+            personalizados hechos especialmente para ti.
+          </p>
+
+          <div class="items">
+            <div class="item">
+              <span class="icon">◇</span>
+              <span>Collares</span>
+            </div>
+            <div class="item">
+              <span class="icon">○</span>
+              <span>Pulseras</span>
+            </div>
+            <div class="item">
+              <span class="icon">✦</span>
+              <span>Aretes</span>
+            </div>
+          </div>
+
+          <p class="location">
+            San Luis Potosí, SLP, México<br />
+            Contacto: <a href="mailto:emma59@hotmail.com">emma59@hotmail.com</a>
+          </p>
+        </div>
+      </div>
+
+      <footer>
+        © 2026 Emma Bisutería. Piezas artesanales hechas con detalle.
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
